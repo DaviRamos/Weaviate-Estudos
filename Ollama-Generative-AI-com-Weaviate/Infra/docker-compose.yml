@@ -1,9 +1,8 @@
 name: ProjetoWeaviateAcademy
 
 # É necessário baixar este modelo sno container do ollama
-# ollama pull nomic-embed-text
-# ollama pull llama3.2
-# ollama pull snowflake-arctic-embed
+# ollama pull llama2
+# ollama pull all-minilm
 
 
 networks:
@@ -17,7 +16,7 @@ volumes:
 services:
   weaviate:
     command: ["--host", "0.0.0.0", "--port", "8080","--scheme", "http"]  
-    image: cr.weaviate.io/semitechnologies/weaviate:1.32.3
+    image: cr.weaviate.io/semitechnologies/weaviate:latest
     networks:
       - local-network
     ports:
@@ -33,7 +32,8 @@ services:
       ENABLE_API_BASED_MODULES: 'true'
       ENABLE_MODULES: 'text2vec-ollama,generative-ollama'
       DEFAULT_VECTORIZER_MODULE: 'text2vec-ollama'
-      CLUSTER_HOSTNAME: 'node1'      
+      CLUSTER_HOSTNAME: 'node1'  
+      ASYNC_INDEXING: 'true'    
   ollama:
     image: ollama/ollama
     container_name: ollama-container

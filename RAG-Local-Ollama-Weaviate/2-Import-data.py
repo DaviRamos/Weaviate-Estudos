@@ -7,6 +7,10 @@ from weaviate.util import generate_uuid5
 from tqdm import tqdm
 import os
 
+# Instantiate your client (not shown). e.g.:
+# client = weaviate.connect_to_weaviate_cloud(...) or
+# client = weaviate.connect_to_local(...)
+
 client = weaviate.connect_to_local()
 
 data_url = "https://raw.githubusercontent.com/weaviate-tutorials/edu-datasets/main/movies_data_1990_2024.json"
