@@ -15,7 +15,7 @@ client.collections.create(
     # Define the generative module
     generative_config=Configure.Generative.ollama(  # Configure the Ollama generative integration
         api_endpoint="http://host.docker.internal:11434",  # If using Docker you might need: http://host.docker.internal:11434
-        model="llama3",  # The model to use
+        model="llama3.2",  # The model to use
     )
     # Additional parameters not shown
 )

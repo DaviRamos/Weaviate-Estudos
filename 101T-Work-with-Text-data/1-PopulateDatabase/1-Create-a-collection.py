@@ -13,6 +13,8 @@ client = weaviate.connect_to_local()
 
 print(client.is_ready())
 
+client.collections.delete("Movie")
+
 client.collections.create(
     name="Movie",
     properties=[

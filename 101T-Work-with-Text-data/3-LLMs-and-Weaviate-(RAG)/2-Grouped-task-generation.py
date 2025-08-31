@@ -1,5 +1,6 @@
 import os
 import weaviate
+from weaviate.config import AdditionalConfig, Timeout
 
 # Instantiate your client (not shown). e.g.:
 # headers = {"X-OpenAI-Api-Key": os.getenv("OPENAI_APIKEY")}  # Replace with your OpenAI API key

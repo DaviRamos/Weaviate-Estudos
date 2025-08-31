@@ -12,7 +12,7 @@ response = collection.generate.near_text(
     grouped_task="Write a tweet promoting these two movies",
     generative_provider=GenerativeConfig.ollama(
         api_endpoint="http://host.docker.internal:11434",  # If using Docker, use this to contact your local Ollama instance
-        model="llama3"  # The model to use, e.g. "phi3", or "mistral", "command-r-plus", "gemma"
+        model="llama3.2"  # The model to use, e.g. "phi3", or "mistral", "command-r-plus", "gemma"
     ),
     # Additional parameters not shown
 )
